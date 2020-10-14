@@ -1,0 +1,186 @@
+/* CSS RESET */
+/* https://alligator.io/css/minimal-css-reset/ */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* ol, ul {
+    list-style: none;
+  } */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CSS RESET END */
+
+/* ***** VARIABLES ***** */
+:root {
+  /* ***** Color Variables */
+  --main-color-red: #920e0e;
+  --main-color-white: #fcffc2;
+
+  --textStroke-color-grey: #efe3e3;
+  --shadow-color-black: #1e1c1c;
+
+  --border-red-5px: 5px solid var(--main-color-red);
+}
+
+.body__grid {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 15vh 75vh 10vh;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+.content__grid {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "img-top content-text"
+    "img-bottom content-text";
+}
+
+.grid__header {
+  grid-area: header;
+}
+
+.grid__main {
+  grid-area: main;
+}
+
+.grid__sidebar {
+  grid-area: sidebar;
+}
+.grid__footer {
+  grid-area: footer;
+}
+
+.header {
+  background-color: var(--main-color-white);
+  border-bottom: var(--border-red-5px);
+  text-align: center;
+}
+
+.heading__primary {
+  display: inline-block;
+  font-size: 4.5rem;
+  color: var(--main-color-red);
+  border-bottom: var(--border-red-5px);
+  font-weight: bolder;
+  -webkit-text-stroke: 1.5px var(--textStroke-color-grey);
+  text-shadow: 2px 2px 3px var(--shadow-color-black);
+  padding: 0 2rem;
+}
+
+.heading__secondary {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  font-weight: lighter;
+  color: var(--main-color-red);
+  font-family: "Dancing Script", cursive;
+}
+
+.icon__header {
+  margin: 0 7rem;
+  display: inline-block;
+  width: max-content;
+  /* icon is png so cant be color normal way. filter changes color used https://codepen.io/sosuke/pen/Pjoqqp to generate filter */
+  filter: invert(12%) sepia(81%) saturate(3552%) hue-rotate(350deg)
+    brightness(92%) contrast(103%);
+  /* height: 3rem; */
+  /* width: 3rem; */
+}
+
+.icon__header img {
+  margin: 0 1rem;
+}
+
+.content {
+  background-color: #f6e1e1;
+  height: 100%;
+}
+
+.sidebar {
+  background-color: var(--main-color-white);
+  border-right: var(--border-red-5px);
+}
+
+.footer {
+  background-color: var(--main-color-white);
+  border-top: var(--border-red-5px);
+}
+
+.img__top {
+  grid-area: img-top;
+  /* background-color: aqua; */
+}
+
+.img__bottom {
+  grid-area: img-bottom;
+  /* background-color: cadetblue; */
+}
+
+.img {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 200rem;
+  padding: 0.2rem;
+  border: var(--border-red-5px);
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+}
+
+.content__text {
+  grid-area: content-text;
+  position: relative;
+  background-color: var(--main-color-white);
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border: var(--border-red-5px);
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+}
+
+.content__text p {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: max-content;
+  width: 60%;
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-family: "Dancing Script", cursive;
+  color: var(--main-color-red);
+  line-height: 1.5;
+}
