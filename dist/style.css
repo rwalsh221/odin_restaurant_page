@@ -69,15 +69,19 @@ img {
 }
 
 .content__grid {
+  /* ********************************* CONTACT .CONTENT__GRID ******************************************************************/
+  /* display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-evenly; */
+  /* align-items: center; */
   display: grid;
-  /* row-gap: 1rem; */
-  grid-template-columns: 35% 65%;
-  grid-template-rows: max-content 48% 48%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  /* grid-template-rows: % 78% 7%; */
+
   grid-template-areas:
-    "nav-bar nav-bar"
-    "img-top content-text"
-    "img-bottom content-text";
-  /* background-color: var(--main-color-white) !important; */
+    "contact-address contact-image"
+    "contact-map contact-map";
 }
 
 .grid__header {
@@ -164,24 +168,67 @@ img {
 }
 
 .img__top {
-  grid-area: img-top;
+  /* grid-area: img; */
   /* margin-top: 10rem; */
   /* background-color: aqua; */
 }
 
 .img__bottom {
-  grid-area: img-bottom;
+  /* grid-area: img; */
   /* background-color: cadetblue; */
 }
 
-.content {
-  /* height: 90%; */
+/* ************************************************ HOME TAB STYLES */
+.home__heading {
+  align-self: center;
+  background-color: var(--main-color-white);
+  border: var(--border-red-5px);
+  padding: 0.5rem 10rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+}
+
+.home__img {
+  align-self: center;
+  height: 30rem;
+  width: 50rem;
+  border-radius: 100%;
+  border: var(--border-red-5px);
+  padding: 1rem;
+  background-color: var(--secondary-color-red-light);
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+}
+
+.home__text {
+  align-self: center;
+  justify-self: flex-end;
+  font-size: 1.5rem;
+  font-family: var(--font-dancing-script);
+  background-color: var(--main-color-white);
+  border: var(--border-red-5px);
+  padding: 0.5rem 6rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+  color: var(--main-color-red);
+}
+
+/* ************************************************ ABOUT TAB STYLES */
+
+.about__img {
+  /* height: 103%; */
+  grid-area: img;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .content__img {
-  width: 80%;
-  height: 80%;
-  margin: 1rem auto;
+  width: 22rem;
+  height: 20rem;
+  /* margin: 1rem auto; */
   border-radius: 200rem;
   padding: 0.2rem;
   border: var(--border-red-5px);
@@ -300,6 +347,7 @@ img {
   border-radius: 5px;
   box-shadow: 2px 2px 5px var(--shadow-color-black);
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .btn__active {
@@ -334,3 +382,93 @@ img {
   border-bottom: 3px solid var(--main-color-white);
   margin: auto 0;
 }
+
+.map-container {
+  grid-area: contact-map;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* margin-left: 3rem; */
+  border-top: var(--border-red-5px);
+  /* border-radius: 10rem; */
+  /* padding: 0.1rem; */
+  background-color: var(--main-color-white);
+  /* box-shadow: 2px 2px 5px var(--shadow-color-black); */
+}
+
+.map {
+  width: 100%;
+  height: 95%;
+  border-radius: 10rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  grid-area: contact-address;
+  justify-self: center;
+  align-self: center;
+  width: 35rem;
+  height: 95%;
+  padding: 0.5rem;
+  border-radius: 10rem;
+  background-color: var(--main-color-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  margin-left: 3rem;
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+
+  border: var(--border-red-5px);
+}
+
+.contact__heading {
+  margin-top: 2rem;
+  border-bottom: 2px solid var(--main-color-red);
+}
+
+.contact__address {
+  margin: auto 0;
+  list-style: none;
+  font-size: 1.4rem;
+  font-family: var(--font-dancing-script);
+  color: var(--main-color-red);
+  border: 2px solid var(--main-color-red);
+  padding: 1rem;
+}
+
+.contact__img--container {
+  grid-area: contact-image;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--main-color-white);
+}
+
+.contact__img {
+  grid-area: contact-image;
+  justify-self: center;
+  align-self: center;
+  width: 35rem;
+  height: 96%;
+  border-radius: 10rem;
+  box-shadow: 2px 2px 5px var(--shadow-color-black);
+  background-color: var(--main-color-white);
+  padding: 0.3rem;
+  border: var(--border-red-5px);
+}
+/* ********************************* HOME .CONTENT__GRID ******************************************************************
+  display: flex;
+  flex-direction: column;
+*/
+
+/* ********************************* ABOUT .CONTENT__GRID *****************************************************************
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: max-content 100%;
+  grid-template-areas:
+    "nav-bar nav-bar"
+    "img content-text";
+ */

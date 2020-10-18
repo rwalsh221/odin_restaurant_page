@@ -6,6 +6,9 @@
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         
         <title></title>
         
@@ -13,7 +16,7 @@
 
     <body class="body__grid">
         
-        <header class="grid__header header">
+        <header class="grid__header header" id="btn__home">
             <div class="icon__header">
                 <img src="https://img.icons8.com/material/48/000000/cow.png" alt="cow icon"/>
                 <img src="https://img.icons8.com/material/48/000000/chicken.png" alt="chicken icon"/>
@@ -32,7 +35,7 @@
         <main class="grid__main">
             <div class="nav-bar">
                 <div class="dash-short"></div>
-                <div class="nav-bar__btn">About</div>
+                <div class="nav-bar__btn" id="btn__about">About</div>
                 <div class="dash"></div>
                 <div class="nav-bar__btn">Menu</div>
                 <div class="dash"></div>
@@ -40,12 +43,34 @@
                 <div class="dash-short"></div>
             </div>
             <div class="content content__grid">
-                <img src="img/briss_1.jpg" alt="picture of owner" class="content__img img__top">
-                <div class="content__text"><p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat atque esse tenetur, architecto nulla in magnam dignissimos optio hic eveniet nesciunt ipsum ullam inventore ab laboriosam aspernatur! Beatae deleniti vel adipisci aperiam ex at? Possimus mollitia recusandae sequi magni expedita quia nemo culpa cum placeat nobis sint, eveniet ullam optio cupiditate ut. Eligendi doloremque rerum facilis quisquam a dolor similique veniam atque quod officia consectetur dignissimos ipsum veritatis, libero et maxime molestiae numquam vitae nemo rem? Esse ab possimus inventore! Eius velit, soluta assumenda non dicta labore fugit laudantium tempora aspernatur, officia asperiores blanditiis explicabo suscipit maiores quas nesciunt praesentium.
-                </p></div>
-                <img src="img/shop.jpg" alt="picture of shop" class="content__img img__bottom">
-            </div>
+
+                <section class="map-container">
+                    <div class="map" id='map'></div>
+                        <script>
+                            mapboxgl.accessToken = 'pk.eyJ1Ijoicmlja3lyaWNhcmRpbmhvIiwiYSI6ImNrZTRuMGJteTAycWEyenBvbDRpZW12ZDcifQ.P0eovMFE3-zpXFL8TXAnhg';
+                            var map = new mapboxgl.Map({
+                            container: 'map',
+                            style: 'mapbox://styles/rickyricardinho/ckgf9w7h12h7n19pds7npab31'
+                            });
+                        </script>
+                </section>
+                
+                <div class="contact">
+                    <h3 class="contact__heading heading__tertiary">COME AND HAVE A BUTCHERS!</h3>
+                    <ul class="contact__address">
+                        <li>H. BRISS & SON</li>
+                        <li>86 Station RD</li>
+                        <li>Royston Vasey</li>
+                        <li>England</li>
+                        <li>01457 555555</li>
+                    </ul>
+                </div>
+
+                
+                <img src="./img/Royston.jpg" alt="Welcome to royston vasey" class="contact__img">
+            
+
+              </div>
         </main>
 
         <section class="sidebar grid__sidebar">
@@ -75,6 +100,24 @@
        
 
         
-        <script src="main.js"></script>
+        <!-- <script src="main.js"></script> -->
     </body>
 </html>
+
+
+
+<!-- *************** HOME HTML -->
+                <!-- <h2 class="heading__secondary home__heading">WELCOME!</h2>
+                <img src="img/hillary_welcome.jpg" alt="Picture of the owner" class="home__img">
+                <div class="home__text">It's like I always say. I'm a business man</div> -->
+                
+                
+                <!-- *************** ABOUT HTML -->
+                <!-- <div class="about__img">
+                    <img src="img/briss_1.jpg" alt="picture of owner" class="content__img img__top">
+                    <img src="img/shop.jpg" alt="picture of shop" class="content__img img__bottom">
+                </div>
+                
+                <div class="content__text"><p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat atque esse tenetur, architecto nulla in magnam dignissimos optio hic eveniet nesciunt ipsum ullam inventore ab laboriosam aspernatur! Beatae deleniti vel adipisci aperiam ex at? Possimus mollitia recusandae sequi magni expedita quia nemo culpa cum placeat nobis sint, eveniet ullam optio cupiditate ut. Eligendi doloremque rerum facilis quisquam a dolor similique veniam atque quod officia consectetur dignissimos ipsum veritatis, libero et maxime molestiae numquam vitae nemo rem? Esse ab possimus inventore! Eius velit, soluta assumenda non dicta labore fugit laudantium tempora aspernatur, officia asperiores blanditiis explicabo suscipit maiores quas nesciunt praesentium.
+                </p></div> -->
